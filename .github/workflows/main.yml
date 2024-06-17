@@ -24,7 +24,7 @@ jobs:
         with:
           targetPlatform: StandaloneOSX
       - name: Compress a build artifact
-        run: tar -cvf StandaloneOSX.tar build/StandaloneOSX
+        run: tar -cvf StandaloneOSX.tar -C build StandaloneOSX
       - name: Upload a build artifact
         uses: actions/upload-artifact@v3
         with:
