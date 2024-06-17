@@ -23,8 +23,10 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: StandaloneOSX
+      - name: Compress a build artifact
+        run: tar -cvf StandaloneOSX.tar build/StandaloneOSX
       - name: Upload a build artifact
         uses: actions/upload-artifact@v3
         with:
           name: Build-StandaloneOSX
-          path: build/StandaloneOSX
+          path: StandaloneOSX.tar
